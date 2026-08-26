@@ -73,3 +73,7 @@ class Goblin(Monster):
 class Orc(Monster):
     def __init__(self):
         super().__init__("Orc", hp = 30, attack = 7, xp_reward = 11)
+
+class Sceleton(Monster):
+    def __init__(self):
+        super().__init__('Sceleton', hp = 15, attack = 5, xp_reward = 9)
