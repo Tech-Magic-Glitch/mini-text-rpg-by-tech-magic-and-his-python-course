@@ -81,3 +81,11 @@ class Sceleton(Monster):
 class Dragon(Monster):
     def __init__(self, name, hp, attack, xp_reward):
         super().__init__('Dragon', hp = 25, attack = 15, xp_reward = 15)
+
+class Dragon_Rider(Monster):
+    def __init__(self, name, hp, attack, xp_reward):
+        super().__init__('Bad Dragon Rider', hp = 35, xp_reward = 25)
+
+class Dragon_Lord(Monster):
+    def __init__(self, name, hp, attack, xp_reward):
+        super().__init__('Rainer der verwinkelte Drachenlord', hp = 50, xp_reward = 30)
