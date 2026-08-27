@@ -1,7 +1,7 @@
 from characters import *
 
-name = input("Enter your name: ")
-player = Player(name)
+Name = input("Enter your name: ")
+player = Player(Name)
 player.show()
 
 goblin = Goblin()
@@ -10,7 +10,7 @@ Dragon_Rider = Dragon_Rider()
 Dragon_Lord = Dragon_Lord()
 Dragon = Dragon()
 
-Name = input("Enter your name: ")
+
 print(f"Welcome, {Name}! Welcome to only fight, a game where you can fight monsters and gain experience points to level up your character. Good luck on your journey! Type in 'quit' to exit the game at any time.")
 print('Please select one of the following numbers to choose your rival:')
 print('1. Goblin')
@@ -34,5 +34,3 @@ while True:
  if rival == quit:
   print('Thanks for playing! Goodbye!')
   break
- else:
-    print('Invalid input. Please enter a number between 1 and 5 to choose your rival, or type "quit" to exit the game.')
