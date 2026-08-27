@@ -76,4 +76,8 @@ class Orc(Monster):
 
 class Sceleton(Monster):
     def __init__(self):
-        super().__init__('Sceleton', hp = 15, attack = 5, xp_reward = 9)
+        super().__init__('Sceleton', hp = 20, attack = 5, xp_reward = 9)
+
+class Dragon(Monster):
+    def __init__(self, name, hp, attack, xp_reward):
+        super().__init__('Dragon', hp = 25, attack = 15, xp_reward = 15)
