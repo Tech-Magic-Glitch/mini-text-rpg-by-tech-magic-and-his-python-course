@@ -1,15 +1,31 @@
+mport random, time, os
 from characters import *
 from items import Weapon, Potion
-from  os import *
-from  random import *
-from  time import *
 
 class Location:
-    def __init__(self, name, description, monsters, loot_table):
+    def __init__(self, name, description, characters, items):
         self.name = name
         self.description = description
-        self.monsters = monsters
-        self.loot_table = loot_table
+        self.characters = characters
+        self.items = items 
+        self.actions = {
+            "explore": self.explore,
+            "rest": self.rest,
+            "leave": self.leave
+        }
+
+    def enter():
+        pass
+
+    def leave():
+        pass
+
+    def rest():
+        pass
+
+    def explore():
+        pass
+    
 
 forest = Location(
     "Forest",

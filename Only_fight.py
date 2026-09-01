@@ -22,6 +22,7 @@ print('5. Dragon Lord')
 while True:
  rival = input('Enter the number of your rival: ')
  if rival == '1':
+  [Goblin]
   player.fight(goblin)
  if rival == '2':
   player.fight(orc)
