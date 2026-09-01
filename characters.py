@@ -1,4 +1,5 @@
 import random, time
+from items import *
 
 class Character:
     def __init__(self, name, hp, attack):
@@ -60,6 +61,26 @@ class Player(Hero):
             print(f"{self.name} gained {enemy.xp_reward} XP")
         else:
             print(f"{self.name} WAS DEFEATED IN BATTLE !!!! 😭😭😭😭😭")
+
+    def use_item(self):
+        # "guard clause" keine items im inventar
+        if not self.inventory:
+            print("You have no items in your inventory!")
+            return
+        print(f"Inventory: {self.inventory}")
+        print("(c)ancel")
+        item = input("Item: ")
+
+        # item suchen
+        for i in self.inventory: # gehe durch die liste an items
+            if i.name == item: # FINDE item in der liste
+                if i.use(self): # benutze das item
+                    # remove
+                    self.inventory.remove(i)
+                return
+        # item nicht gefunden
+        print("Invalid Item")
+
 
 class Monster(Character):
     def __init__(self, name, hp, attack, xp_reward):
