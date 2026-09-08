@@ -1,4 +1,4 @@
-mport random, time, os
+import random, time, os
 from characters import *
 from items import Weapon, Potion
 
@@ -14,14 +14,37 @@ class Location:
             "leave": self.leave
         }
 
-    def enter():
-        pass
+    def enter(self, player):
+        self.player = player
 
-    def leave():
-        pass
+        # add inventory to actions
+        self.actions["inventory"] = self.player.use_item
 
-    def rest():
-        pass
+        print(f"Location: {self.description}")
+
+        # enter loop
+        while True:
+            print("Options: ")
+            # for loop to print all options
+            for option in self.actions:
+                print(f"- {option}")
+
+            # treffe wahl bis richtig gewählt
+            choice = input("Choose an option: ")
+            while choice not in self.actions:
+                print("Invalid choice.")
+                choice = input("Choose an option: ")
+
+            # choice ausführen
+            if self.actions[choice]():
+                break
+
+    def leave(self):
+        return True
+
+    def rest(self):
+        print("You rest and regain your strength")
+        self.player.hp = self.player.max_hp
 
     def explore():
         pass
