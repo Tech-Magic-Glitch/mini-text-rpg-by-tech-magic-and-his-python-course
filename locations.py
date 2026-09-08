@@ -1,6 +1,7 @@
 import random, time, os
 from characters import *
 from items import Weapon, Potion
+from helpers import *
 
 class Location:
     def __init__(self, name, description, characters, items):
@@ -47,7 +48,25 @@ class Location:
         self.player.hp = self.player.max_hp
 
     def explore():
-        pass
+        dice_roll = Dice.roll(6)
+
+        if dice_roll <= 3:
+            if self.characters:
+                os.system("csl")
+                enemy_class = random.choice(self.characters)
+                enemy = enemy_class()
+                print(f"You encounter a {enemy.name}!")
+
+                time.sleep(1)
+                self.player.fight(enemy)
+            if not self.player.is_alive():
+                return True
+
+            elif dice_roll >= 4 and self.items:
+                pass
+                
+
+
     
 
 forest = Location(
